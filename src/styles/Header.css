@@ -1,0 +1,46 @@
+.header {
+    composes: container from './Common.css';
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 52px;
+    width: 100%;
+    background-color: #fff;
+    border-bottom: 1px solid transparent;
+}
+
+@media (min-width: 992px) {
+    .header {
+        /* padding-left: 100px;
+        padding-right: 100px; */
+    }
+}
+
+@media (min-width: 1200px) {
+    .header {
+        /* padding-left: 200px;
+        padding-right: 200px; */
+    }
+}
+
+.left {
+    float: left
+}
+
+.right {
+    float: right
+}
+
+.title {
+    padding: 4px 10px;
+    color: #878e9a;
+    letter-spacing: 1px;
+    font-size: 16px;
+}
+
+.title:hover {
+    color: #2a3342;
+} 
+
+
+

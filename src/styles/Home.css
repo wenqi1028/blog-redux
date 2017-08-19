@@ -1,0 +1,14 @@
+.intro {
+    text-align: center;
+}
+
+.myImg {
+    width: 5rem;
+    height: 5rem;
+    border-radius: 50%;
+}
+
+.myName {
+    font-family: 'Podkova', serif;
+    margin-top: 10px;
+}

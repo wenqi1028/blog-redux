@@ -1,0 +1,34 @@
+footer {
+    margin-top: 60px;
+    padding: 40px 15px;
+    color: #a7b1c2;
+}
+
+footer:after {
+  content: " ";
+  display: block;
+  clear: both;
+  height: 0;
+}
+
+.iconZone {
+   text-align: center;
+}
+
+.iconPart {
+    font-size: 33px;
+    color: #878e9a;
+    margin-left: 16px;
+}
+
+.icon {
+    width: 24px;
+    height: 24px;
+    vertical-align: -.15em;
+    fill: currentColor;
+    overflow: hidden;
+}
+
+.icon:hover {
+    color: #2a3342;
+}

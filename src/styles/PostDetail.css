@@ -1,0 +1,76 @@
+/*view*/
+.header {
+    padding-top: 40px;
+    padding-bottom: 10px;
+}
+
+.meta {
+    composes: meta from './Post.css';
+    text-align: center;
+    font-size: 15px;
+}
+
+.date {
+    font-family: "Montserrat", "Helvetica Neue", "Hiragino Sans GB", "LiHei Pro", Arial, sans-serif;
+    font-size: 14px;
+    color: #999;
+    margin: 0 0 30px;
+    letter-spacing: 1px;
+    text-align: center;
+}
+
+.title {
+    font-size: 2em;
+    line-height: 1.4;
+    margin-bottom: 20px;
+    text-align: center;
+    transition: opacity .2s linear;
+}
+
+.content {
+    line-height: 1.8em;
+    word-break: break-all;
+}
+
+.content p {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.content a {
+    color: #3da8f5;
+    word-break: break-word;
+    border-bottom: 2px solid transparent;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 18px;
+}
+
+.content a:hover {
+    color: #0286c2;
+    border-bottom-color: #0286c2;
+}
+
+.content img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin: 10px auto;
+    cursor: zoom-in;
+}
+
+.desc {
+    padding: 15px 0;
+    color: #999;
+    font-size: 15px;
+    margin-bottom: 0;
+}
+
+.desc:after {
+    display: block;
+    width: 160px;
+    height: 4px;
+    border-radius: 3px;
+    background: #efefef;
+    content: "";
+    margin-top: 1rem;
+}

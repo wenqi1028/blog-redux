@@ -1,0 +1,11 @@
+.avatar {
+    text-align: center;
+    margin-bottom: 24px;
+    cursor: pointer;
+}
+
+.avatar img {
+    width: 5rem;
+    height: 5rem;
+    border-radius: 50%
+}
