@@ -1,0 +1,5 @@
+/node_modules
+
+/src/api/model/db.js
+
+./server.js
