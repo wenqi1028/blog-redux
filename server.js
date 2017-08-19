@@ -26,13 +26,13 @@ app.use(express.static(__dirname + '/src'));
 app.use(express.static(__dirname + '/upload'));
 
 // 解决跨域，开发环境时打开。要放在路径解析下面，否则会先读成json
-app.all('*', function(req, res, next) {
-    res.header('Access-Control-Allow-Origin', '*');
-    res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept, X-File-Name');
-    res.header('Access-Control-Allow-Methods','PUT,POST,GET,DELETE,OPTIONS');
-    res.header('Content-Type', 'application/json;charset=utf-8');
-    next();
-});
+// app.all('*', function(req, res, next) {
+//     res.header('Access-Control-Allow-Origin', '*');
+//     res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept, X-File-Name');
+//     res.header('Access-Control-Allow-Methods','PUT,POST,GET,DELETE,OPTIONS');
+//     res.header('Content-Type', 'application/json;charset=utf-8');
+//     next();
+// });
 
 app.get('/feed', postC.feed , function (req, res) {
     res.writeHead(200, {'Content-Type': 'application/xml'});
