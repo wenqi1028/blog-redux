@@ -7,12 +7,48 @@
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bluebird/3.3.5/bluebird.min.js"></script>
     <title>精英六组</title>
-<link href="/build/app.css?e42c4d960693bde29051" rel="stylesheet"></head>
+    <style>
+    .loading-wrap {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: #fff;
+        z-index: 99;
+        padding-top: 40vh;
+        text-align: center;
+    }
+
+    .loading-icon {
+        display: inline-block;
+        width: 2rem;
+        height: 2rem;
+        box-sizing: border-box;
+        border: 3px solid transparent;
+        border-top-color: #009fb7;
+        border-left-color: #009fb7;
+        border-radius: 50%;
+        -webkit-animation: nprogress-spinner 500ms linear infinite;
+                animation: nprogress-spinner 500ms linear infinite;
+    } 
+
+    @-webkit-keyframes nprogress-spinner {
+    0%   { -webkit-transform: rotate(0deg); }
+    100% { -webkit-transform: rotate(360deg); }
+    }
+
+    @keyframes nprogress-spinner {
+    0%   { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+    }
+</style>
+<link href="/build/app.css?f236db9b9137dd957229" rel="stylesheet"></head>
 <body>
     <div id="app">
         <div class="loading-wrap">
             <span class="loading-icon"></span>
         </div>
     </div>
-<script type="text/javascript" src="/build/app.js?e42c4d960693bde29051"></script><script type="text/javascript" src="/build/vendors.js?e42c4d960693bde29051"></script></body>
+<script type="text/javascript" src="/build/app.js?f236db9b9137dd957229"></script><script type="text/javascript" src="/build/vendors.js?f236db9b9137dd957229"></script></body>
 </html>
