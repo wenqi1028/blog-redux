@@ -4,6 +4,10 @@
     box-sizing: border-box;
 }
 
+html {
+    font-size: 17px;
+}
+
 body {
     font-family: "Roboto","Helvetica Neue",sans-serif;
     margin: 0;
@@ -11,7 +15,6 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
     padding: 0;
-    margin: 0 0 10px;
     color: #000;
 }
 
@@ -193,6 +196,7 @@ main {
     background-color: transparent;
     color: #878e9a;
     font-size: 2.2rem;
+    z-index: 99;
 }
 
 .backTop img {

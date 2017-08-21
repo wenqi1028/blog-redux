@@ -38,11 +38,11 @@
 }
 
 .content a {
+    font-family: 'Times New Roman', Times, serif;
     color: #3da8f5;
     word-break: break-word;
     border-bottom: 2px solid transparent;
-    font-family: 'Times New Roman', Times, serif;
-    font-size: 18px;
+    word-break: break-all;
 }
 
 .content a:hover {
