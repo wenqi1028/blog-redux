@@ -1,3 +1,5 @@
+import { target } from '../utils'
+
 export const LOGIN = 'LOGIN' 
 export const CREATE_ARTICLE = 'CREATE_ARTICLE' 
 export const CLEAR_ARTICLE = 'CLEAR_ARTICLE' 
@@ -13,7 +15,15 @@ export const LOAD_ARTICLES_SUCCESS = 'LOAD_ARTICLES_SUCCESS'
 export const LOAD_ARTICLES_ERROR = 'LOAD_ARTICLES_ERROR'
 export const TOGGLE_SEARCH = 'TOGGLE_SEARCH'
 export const CHANGE_TAG = 'CHANGE_TAG'
-export const API_URL = 'http://localhost:3001/api/'
+export const API_URL = target + 'api/'
+
+export function loading() {
+    return function(dispatch) {
+        dispatch({
+            type: LOADING,
+        })
+    }
+}
 
 export function fetchPosts(tag = '') {
     return function(dispatch) {

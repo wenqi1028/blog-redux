@@ -21,36 +21,36 @@ module.exports = {
     })
   },
     
-    search: function(req, res, next) {
-        var re = new RegExp(req.query.k, 'gi')
-        Posts.find({'$or': [ {post_title:re} , {post_content:re} ]} , function(err, data) {
-            if (err) return console.error(err)
-            else console.log('修改文章：' + req.body.post_title);
-            res.writeHead(200, {'Content-Type': 'application/json;charset=utf-8'});
-            res.end(JSON.stringify(data));
-        })
-    },
-
-    create: function (req, res, next) {
-      req.body.uid = ObjectID(req.body.uid)
-      new Posts(Object.assign(req.body, {post_date: new Date()})).save( function (err) {
-          if (err) {
-            console.log(err)
-          } else {
-            console.log('新增文章：' + req.body.post_title)
-          }
-          res.writeHead(200, {'Content-Type': 'application/json;charset=utf-8'})
-          res.end(JSON.stringify(req.body))
+  search: function(req, res, next) {
+      var re = new RegExp(req.query.k, 'gi')
+      Posts.find({'$or': [ {post_title:re} , {post_content:re} ]} , function(err, data) {
+          if (err) return console.error(err)
+          else console.log('修改文章：' + req.body.post_title);
+          res.writeHead(200, {'Content-Type': 'application/json;charset=utf-8'});
+          res.end(JSON.stringify(data));
       })
-    },
+  },
 
-    view: function(req, res, next) {
-      UserPosts.find({_id: ObjectID(req.query.postid)}, function(err, data) {
-        if (err) return console.error(err)
+  create: function (req, res, next) {
+    req.body.uid = ObjectID(req.body.uid)
+    new Posts(Object.assign(req.body, {post_date: new Date()})).save( function (err) {
+        if (err) {
+          console.log(err)
+        } else {
+          console.log('新增文章：' + req.body.post_title)
+        }
         res.writeHead(200, {'Content-Type': 'application/json;charset=utf-8'})
-        res.end(JSON.stringify(data))
-      })
-    },
+        res.end(JSON.stringify(req.body))
+    })
+  },
+
+  view: function(req, res, next) {
+    UserPosts.find({_id: ObjectID(req.query.postid)}, function(err, data) {
+      if (err) return console.error(err)
+      res.writeHead(200, {'Content-Type': 'application/json;charset=utf-8'})
+      res.end(JSON.stringify(data))
+    })
+  },
 
   update: function(req, res, next) {
     Posts.update(

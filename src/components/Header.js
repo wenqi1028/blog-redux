@@ -16,27 +16,34 @@ class Header extends Component {
 		this.onBlur = this.onBlur.bind(this)
 		this.onFocus = this.onFocus.bind(this)
 	}
+
 	logout() {
-			localStorage.clear()
-			this.props.history.push('/')
+		localStorage.clear()
+		this.props.history.push('/')
 	}
+
 	onSearch(q) {
-			if (q.target.value) {
-					this.props.fetchSearch(q.target.value)
-					this.props.toggleSearch(true)
-			}
+		if (q.target.value) {
+			this.props.fetchSearch(q.target.value)
+			this.props.toggleSearch(true)
+		}
 	}
+
 	onBlur(q) {
-			if (q.relatedTarget && q.relatedTarget.nodeName == 'A') {
-					setTimeout(function() {
-							this.props.toggleSearch(false)
-					}.bind(this), 2000)
-			}
-			else this.props.toggleSearch(false)
+		console.log(q)
+		if (q.relatedTarget && q.relatedTarget.nodeName == 'A') {
+			console.log('settimeout')
+			setTimeout(function() {
+				this.props.toggleSearch(false)
+			}.bind(this), 2000)
+		}
+		else this.props.toggleSearch(false)
 	}
+
 	onFocus(q) {
-			this.props.toggleSearch(q.target.value)
+		this.props.toggleSearch(q.target.value)
 	}
+
 	render() {
 		const panel = classNames({
 			searchPanelActive: this.props.isSearchActive,
@@ -62,7 +69,7 @@ class Header extends Component {
 							void 0
 					}
 				</div>
-				<form className={search.zoneRight} action="/admin/order/index/">
+				<div className={search.zoneRight}>
 					<svg viewBox="0 0 16 16" className={search.icon} aria-hidden="true">
 						<title></title>
 						<g>
@@ -90,7 +97,7 @@ class Header extends Component {
 							}
 						</ul>
 					</div>
-				</form>
+				</div>
 			</header>
 		)
 	}
