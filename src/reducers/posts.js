@@ -6,7 +6,7 @@ const initialState = {
     articleList: [],
     searchList:[],
     isSearchActive: false,
-    article: {_id: '', uid: '', post_title: '', post_desc: '', post_content: '', tags: '', user_docs: []},
+    article: { _id: '', uid: '', post_title: '', post_desc: '', post_content: '', tags: '', user_docs: [] },
     newArticle: [{post_title: ''}]
 }
 
@@ -15,13 +15,13 @@ export default function (state = initialState, action) {
         case CLEAR_ARTICLE: {
             return {
                 ...state,
-                article: { uid: localStorage.uid },
+                article: { uid: localStorage.uid, post_title: '', post_desc: '', post_content: '' },
             }
         }
         case LOAD_ARTICLE: {
             return {
                 ...state,
-                loading: true,
+                loading: false,
                 article: action.data[0],
             }
         }

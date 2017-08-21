@@ -4,8 +4,10 @@ import Post from './Post'
 export default class PostList extends Component {
   componentDidMount() {
     this.props.fetchPosts() 
+    
   }
   render() {
+    console.log(this.props)
     const { loading, error, articleList } = this.props
     if (error) {
       return <p className="message">Oops, something is wrong.</p>

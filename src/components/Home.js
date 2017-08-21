@@ -1,9 +1,8 @@
 import React, { Component } from 'react'
-import { bindActionCreators } from 'redux'
 import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
 import PostList from './PostList'
-import * as listActions from '../actions'
+import { fetchPosts } from '../actions'
 import home from '../styles/Home.css'
 
 class Home extends Component {
@@ -19,7 +18,7 @@ class Home extends Component {
         </section>
         <PostList
           articleList = {this.props.articleList}
-          {...this.props.listActions}
+          fetchPosts = {this.props.fetchPosts}
         />
       </div>
     )
@@ -30,8 +29,5 @@ export default connect(state => {
   return {
     articleList: state.posts.articleList
     }
-  }, dispatch => {
-  return { 
-    listActions: bindActionCreators(listActions, dispatch),
-  }
-})(Home) 
+  }, { fetchPosts }
+)(Home) 
