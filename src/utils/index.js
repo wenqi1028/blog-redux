@@ -9,9 +9,9 @@ export function formatDate(str) {
     const date = new Date(str)
     const arr_month = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'Septemper', 'October', 'November', 'December']
     const day = date.getDate() < 10 ? '0' + date.getDate() : date.getDate()
-    const time = date.getTime() - new Date().getTime(); //现在的时间-传入的时间 = 相差的时间（单位 = 毫秒）
+    const time = new Date().getTime() - date.getTime(); //现在的时间-传入的时间 = 相差的时间（单位 = 毫秒）
     if (time < 0) {
-        return '';
+        return '刚刚';
     } else if (time / 1000 < 60) {
         return '刚刚';
     } else if ((time / 60000) < 60) {
