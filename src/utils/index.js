@@ -9,7 +9,7 @@ export function formatDate(str) {
     const date = new Date(str)
     const arr_month = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'Septemper', 'October', 'November', 'December']
     const day = date.getDate() < 10 ? '0' + date.getDate() : date.getDate()
-    const time = new Date().getTime() - date.getTime(); //现在的时间-传入的时间 = 相差的时间（单位 = 毫秒）
+    const time = date.getTime() - new Date().getTime(); //现在的时间-传入的时间 = 相差的时间（单位 = 毫秒）
     if (time < 0) {
         return '';
     } else if (time / 1000 < 60) {
@@ -23,7 +23,6 @@ export function formatDate(str) {
     } else {
         return day + ' ' + arr_month[date.getMonth()] + ' ' + date.getFullYear()
     }
-    
 }
 
 /**
