@@ -7,6 +7,7 @@ Posts = mongoose.model('posts', {
     post_desc: String, 
     post_content: String,
     post_date: Date,
+    update_date: Date,
     tags: String
 });
 

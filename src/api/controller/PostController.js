@@ -14,7 +14,7 @@ module.exports = {
 
   list: function(req, res, next) {
     const tag = new RegExp(req.query.tag, 'gi')
-    UserPosts.find({ '$or': [{ tags: tag }, { post_title: tag }] }).sort({ '_id':-1 }).exec(function(err, data) {
+    UserPosts.find({ '$or': [{ tags: tag }, { post_title: tag }] }).sort({ 'update_date':-1, '_id':-1 }).exec(function(err, data) {
       if (err) return console.error(err)
       res.writeHead(200, {'Content-Type': 'application/json;charset=utf-8'})
       res.end(JSON.stringify(data))
@@ -59,6 +59,7 @@ module.exports = {
         post_title: req.body.post_title, 
         post_desc: req.body.post_desc,
         post_content: req.body.post_content,
+        update_date: new Date(),
         tags: req.body.tags  
       }}, function(err, result) {
         if (err) throw err

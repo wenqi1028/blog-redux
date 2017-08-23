@@ -27,6 +27,10 @@ class UserForm extends Component {
     this.props.fetchUser(localStorage.uid)
   }
 
+  componentDidMount() {
+    document.title = localStorage.nickname
+  }
+  
   changeAvatar() {
     document.getElementById('avatarFile').click()
   }

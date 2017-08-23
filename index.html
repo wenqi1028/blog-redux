@@ -20,7 +20,6 @@
         padding-top: 40vh;
         text-align: center;
     }
-
     .loading-icon {
         display: inline-block;
         width: 2rem;
@@ -33,23 +32,68 @@
         -webkit-animation: nprogress-spinner 500ms linear infinite;
                 animation: nprogress-spinner 500ms linear infinite;
     } 
-
     @-webkit-keyframes nprogress-spinner {
-    0%   { -webkit-transform: rotate(0deg); }
-    100% { -webkit-transform: rotate(360deg); }
+        0%   { -webkit-transform: rotate(0deg); }
+        100% { -webkit-transform: rotate(360deg); }
+    }
+    @keyframes nprogress-spinner {
+        0%   { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
     }
 
-    @keyframes nprogress-spinner {
-    0%   { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
+    /* 畅言 */
+    .post-wrap-border-l, .post-wrap-border-r, .post-wrap-border-t, .cmt-list-type, .module-cmt-footer, .module-hot-topic, .block-title-gw, .nt-item .nt-logo,.click-prop-gw {
+        display: none !important;
+    }
+    .post-wrap-main, .header-login {
+        border: none !important;
+    }
+    .post-wrap-main {
+        margin: 0 !important;
+    }
+    .wrap-area-w {
+        background: #f7f7f7;
+    }
+    .issue-btn-w .btn-fw {
+        background: #eee !important;
+        border-radius: 2px !important;
+        font-size: 16px !important;
+        letter-spacing: 4px !important;
+        color: #666 !important;
+        border: 1px solid #ccc !important;
+        transition: all 0.2s;
+    }
+    .issue-btn-w .btn-fw::after {
+        content: "发布" !important;
+    }
+    .block-head-w .head-img-w {
+        top: 10px !important;
+    }
+    .nt-list .nt-item {
+        border-color: #666 !important;
+    }
+
+    .title-user-w .user-wrap-w {
+        top: 45px !important;
+        left: 51px !important;
+    }
+
+    /* li.function-face-w, li.function-uploading-w .effect-w .uploading-b {
+        background-image: url(https://changyan.itc.cn/mdevp/extensions/cy-skin/028/skin-black/images/face.png) !important;
+    } */
+    .clear-g.block-cont-gw, .cbox-block-w {
+        margin-top: 25px !important; 
+    }
+    .block-head-w .header-login {
+        left: 0 !important;
     }
 </style>
-<link href="/build/app.css?36510fe3b38e17734abc" rel="stylesheet"></head>
+<link href="/build/app.css?b1ac7d0dd30e7c1d62b8" rel="stylesheet"></head>
 <body>
     <div id="app">
         <div class="loading-wrap">
             <span class="loading-icon"></span>
         </div>
     </div>
-<script type="text/javascript" src="/build/vendor.js?36510fe3b38e17734abc"></script><script type="text/javascript" src="/build/app.js?36510fe3b38e17734abc"></script></body>
+<script type="text/javascript" src="/build/vendor.js?b1ac7d0dd30e7c1d62b8"></script><script type="text/javascript" src="/build/app.js?b1ac7d0dd30e7c1d62b8"></script></body>
 </html>

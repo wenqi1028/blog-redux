@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import { fetchPost, deletePost } from '../actions'
 import { Link } from 'react-router-dom'
-import { formatDate } from '../utils'
+import { formatDate, loadJs } from '../utils'
 import common from '../styles/Common.css'
 import detail from '../styles/PostDetail.css'
 import post from '../styles/Post.css'
@@ -23,8 +23,16 @@ class PostDetail extends Component {
         this.props.fetchPost(this.props.match.params.postid)
     }
     componentDidUpdate() {
-        hljs.initHighlighting()
-        mediumZoom('main img')
+        document.title = this.props.article.post_title
+        hljs.initHighlighting();
+        mediumZoom('main img');
+        // 畅言评论
+        (function(){ 
+        var appid = 'cytb2bNdY'; 
+        var conf = 'prod_83a750ef3fef7a11a324dbddca77e7c4'; 
+        var width = window.innerWidth || document.documentElement.clientWidth; 
+        loadJs("http://changyan.sohu.com/upload/changyan.js",function(){window.changyan.api.config({appid:appid,conf:conf})}); })();
+        
     }
     render() {
         const { article } = this.props
@@ -60,6 +68,7 @@ class PostDetail extends Component {
                     </div>
                     : void 0 
                 }
+                <div id="SOHUCS" sid={article._id} ></div> 
             </div>
         );
     }
