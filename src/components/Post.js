@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
-import { formatDate } from '../utils'
+import { formatDate, loadJs } from '../utils'
 import post from '../styles/Post.css'
 
 export default class Post extends Component {
@@ -27,6 +27,9 @@ export default class Post extends Component {
                 }
                 <span className={post.metaItem}>
                     <time className={post.date}>{formatDate(this.props.post_date)}</time>
+                </span>
+                <span className={post.metaItem}>
+                    <span id={'sourceId::' + this.props._id} className="cy_cmt_count"></span>评论
                 </span>
                 {/* <span className={post.metaItem}>
                     <a href="#">1评论</a>

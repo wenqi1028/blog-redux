@@ -1,13 +1,22 @@
 import React, { Component } from 'react'
 import Post from './Post'
+import { loadJs } from '../utils'
 
 export default class PostList extends Component {
-  componentDidMount() {
+  componentWillMount() {
     this.props.fetchPosts() 
-    
   }
+
+  componentDidMount() {
+    setTimeout(function() {
+      loadJs("https://changyan.sohu.com/upload/plugins/plugins.list.count.js?clientId=cytb2bNdY",function(e){
+
+      },'cy_cmt_num')
+    }, 100);
+
+  }
+
   render() {
-    console.log(this.props)
     const { loading, error, articleList } = this.props
     if (error) {
       return <p className="message">Oops, something is wrong.</p>

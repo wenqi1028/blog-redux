@@ -25,6 +25,27 @@ export function formatDate(str) {
     }
 }
 
+export function loadJs(src, callback, id){
+    var head = document.getElementsByTagName("head")[0]||document.head||document.documentElement
+    var script = document.createElement("script")
+    script.setAttribute("id", id || "")
+    script.setAttribute("type", "text/javascript")
+    script.setAttribute("charset", "UTF-8")
+    script.setAttribute("src" , src)
+    if(typeof callback === "function") {
+        if (window.attachEvent) {
+            script.onreadystatechange = function() {
+                var e = script.readyState
+                if(e === "loaded" || e === "complete") {
+                    script.onreadystatechange = null
+                    callback()
+                }
+            }
+        } else { script.onload = callback }
+    }
+    head.appendChild(script)
+};
+
 /**
  * 权限分配
  * @param str master, teacher, monitor, stdudent
