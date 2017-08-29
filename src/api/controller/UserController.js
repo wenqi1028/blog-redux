@@ -20,7 +20,6 @@ module.exports = {
             res.send(200, 
                 {
                   uid: data._id,
-                  username: data.username,
                   nickname: data.nickname,
                   avatar: data.avatar,
                   auth: data.auth

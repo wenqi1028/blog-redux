@@ -55,7 +55,7 @@ class Header extends Component {
 					<a className={header.title} href="/">
 							首页
 					</a>
-					{  localStorage.hasOwnProperty('username')
+					{  localStorage.hasOwnProperty('auth')
 					? 
 					<span>
 							<Link className={header.title} to={`/create`}>

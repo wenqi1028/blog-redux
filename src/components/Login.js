@@ -15,7 +15,7 @@ class Login extends Component {
     this.props.login(props)
   }
   componentDidUpdate() {
-    if (this.props.user.hasOwnProperty('username')) {
+    if (this.props.user.hasOwnProperty('auth')) {
       Object.assign(localStorage, this.props.user)
       this.props.history.push('/')
     } 

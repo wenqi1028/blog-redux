@@ -6,8 +6,7 @@ const initialState = {
     articleList: [],
     searchList:[],
     isSearchActive: false,
-    article: { _id: '', uid: '', post_title: '', post_desc: '', post_content: '', tags: '', user_docs: [] },
-    newArticle: [{post_title: ''}]
+    article: { _id: '', uid: '', post_title: '', post_desc: '', post_content: '', tags: '', update_date: '', user_docs: [] },
 }
 
 export default function (state = initialState, action) {
