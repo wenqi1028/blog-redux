@@ -28,7 +28,3 @@ footer:after {
     fill: currentColor;
     overflow: hidden;
 }
-
-.icon:hover {
-    color: #2a3342;
-}

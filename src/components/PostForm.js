@@ -55,9 +55,10 @@ class PostForm extends Component {
   }
 
   onSubmit(props) {
+    const path = this.props.match.params.postid ? `/detail/${this.props.match.params.postid}` : `/`
     if (!this.isNew) this.props.updatePost(props)
     else this.props.createPost(props)
-    this.props.history.push('/')
+    this.props.history.push(path)
   }
   
   onTagChange(e) {
