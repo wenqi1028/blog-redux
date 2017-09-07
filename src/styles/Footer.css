@@ -21,6 +21,10 @@ footer:after {
     margin-left: 16px;
 }
 
+.iconPart:hover {
+    color: #2a3342;
+}
+
 .icon {
     width: 24px;
     height: 24px;

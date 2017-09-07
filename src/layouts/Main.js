@@ -34,7 +34,7 @@ class Main extends Component {
                 <footer className={common.container}>
                     {/* © Copyright 2017 Seven */}
                      <div className={footer.iconZone}>
-                        <a href="https://github.com/wenqi1028/blog-react" className={footer.iconPart} target="_blank">
+                        <a href="https://github.com/wenqi1028/blog-redux" className={footer.iconPart} target="_blank">
                             <svg className={footer.icon} aria-hidden="true">
                                 <use xlinkHref="#icon-github"></use>
                             </svg>
