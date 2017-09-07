@@ -1,4 +1,6 @@
-import { LOGIN, UPLOAD_AVATAR, LOAD_USER, UPDATE_USER } from '../actions'
+import { LOGIN, 
+    UPLOAD_AVATAR, UPLOAD_AVATAR_SUCCESS, 
+    LOAD_USER, UPDATE_USER } from '../actions'
 
 const initialState = {}
 
@@ -8,11 +10,20 @@ export default function (state = initialState, action) {
             return action.data;
         }
         case LOAD_USER: {
-            return action.data
+            return {
+                ...action.data,
+            }
         }
         case UPLOAD_AVATAR: {
             return {
                 ...state,
+                loading: true,
+            }
+        }
+        case UPLOAD_AVATAR_SUCCESS: {
+            return {
+                ...state,
+                loading: false,
                 avatar: action.data.file_path
             }
         }
@@ -21,7 +32,7 @@ export default function (state = initialState, action) {
             localStorage.avatar = action.data.avatar
             return {
                 ...state,
-                ...action.data
+                ...action.data,
             }
         }
         default:

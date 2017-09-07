@@ -20,6 +20,8 @@ class UserForm extends Component {
   constructor(props) {
     super(props)
     this.upload = this.upload.bind(this)
+    this.loadingWrap = new Modal({ type: 'loading', title: '正在上传头像..' })
+    
   }
 
   componentWillMount() {
@@ -41,6 +43,7 @@ class UserForm extends Component {
         return;
     }
     this.props.uploadavatar(file)
+    this.loadingWrap.show()
   }
 
   onSubmit(props) {
@@ -50,6 +53,7 @@ class UserForm extends Component {
   
   render() {
     const { handleSubmit, pristine, submitting, createPost} = this.props
+    if (!this.props.user.loading) this.loadingWrap.hide()
     return (
       <div>
         <div className={home.intro}>

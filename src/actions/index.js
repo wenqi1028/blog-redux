@@ -8,8 +8,10 @@ export const CHANGE_CONTENT = 'CHANGE_CONTENT'
 export const SEARCH_ARTICLE = 'SEARCH_ARTICLE' 
 export const LOAD_USER = 'LOAD_USER' 
 export const UPLOAD_AVATAR = 'UPLOAD_AVATAR'
+export const UPLOAD_AVATAR_SUCCESS = 'UPLOAD_AVATAR_SUCCESS'
 export const UPDATE_USER = 'UPDATE_USER' 
 export const LOAD_ARTICLE = 'LOAD_ARTICLE' 
+export const LOAD_ARTICLE_SUCCESS = 'LOAD_ARTICLE_SUCCESS'
 export const LOAD_ARTICLES = 'LOAD_ARTICLES' 
 export const LOAD_ARTICLES_SUCCESS = 'LOAD_ARTICLES_SUCCESS'
 export const LOAD_ARTICLES_ERROR = 'LOAD_ARTICLES_ERROR'
@@ -27,13 +29,16 @@ export function loading() {
 
 export function fetchPosts(tag = '') {
     return function(dispatch) {
+        dispatch({
+            type: LOAD_ARTICLES
+        })
 	    fetch(API_URL + 'archives?tag=' + tag)
         .then(function(response) {
             return response.json()
         })
         .then(function(data) {
             dispatch({
-                type: LOAD_ARTICLES,
+                type: LOAD_ARTICLES_SUCCESS,
                 data
 		    });
         })
@@ -45,16 +50,18 @@ export function fetchPosts(tag = '') {
 
 export function fetchPost(id) {
     return function(dispatch) {
+        dispatch({
+            type: LOAD_ARTICLE,
+        })
 	    fetch(API_URL + 'detail?postid=' + id)
         .then(function(response) {
             return response.json()
         })
         .then(function(data) {
             dispatch({
-                type: LOAD_ARTICLE,
+                type: LOAD_ARTICLE_SUCCESS,
                 data
             })
-            
         })
         .catch(function(e) {
             console.error(e)
@@ -165,6 +172,9 @@ export function uploadavatar(file) {
     const formData = new FormData()
     formData.append('file', file)
     return function(dispatch) {
+        dispatch({
+            type: UPLOAD_AVATAR,
+        })
 	    fetch(API_URL + '../upload', {
             method: 'POST',
             headers: { 'X-File-Name': encodeURIComponent(file.name) },
@@ -174,9 +184,8 @@ export function uploadavatar(file) {
             return response.json()
         })
         .then(function(data) {
-            console.log('data', data)
             dispatch({
-                type: UPLOAD_AVATAR,
+                type: UPLOAD_AVATAR_SUCCESS,
                 data
             })
         })

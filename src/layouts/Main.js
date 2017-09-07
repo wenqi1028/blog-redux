@@ -5,6 +5,7 @@ import common from '../styles/Common.css'
 import footer from '../styles/Footer.css'
 import Header from '../components/Header'
 import '../utils/iconfont.js'
+import '../utils/modal.js'
 
 class Main extends Component {
     scrollTop() {

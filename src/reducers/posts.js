@@ -1,4 +1,8 @@
-import { CLEAR_ARTICLE, LOAD_ARTICLE, LOAD_ARTICLES, CREATE_ARTICLE, CHANGE_CONTENT, SEARCH_ARTICLE, TOGGLE_SEARCH, CHANGE_TAG } from '../actions'
+import { 
+    CLEAR_ARTICLE, 
+    LOAD_ARTICLE, LOAD_ARTICLE_SUCCESS,
+    LOAD_ARTICLES, LOAD_ARTICLES_SUCCESS, 
+    CREATE_ARTICLE, CHANGE_CONTENT, SEARCH_ARTICLE, TOGGLE_SEARCH, CHANGE_TAG } from '../actions'
 
 const initialState = {
     loading: true,
@@ -6,7 +10,7 @@ const initialState = {
     articleList: [],
     searchList:[],
     isSearchActive: false,
-    article: { _id: '', uid: '', post_title: '', post_desc: '', post_content: '', tags: '', update_date: '', user_docs: [] },
+    article: { _id: '', uid: '', post_title: '', post_desc: '', post_content: '', post_date: '1991-02-06T12:30:30.016Z', tags: '', update_date: '', user_docs: [] },
 }
 
 export default function (state = initialState, action) {
@@ -20,6 +24,12 @@ export default function (state = initialState, action) {
         case LOAD_ARTICLE: {
             return {
                 ...state,
+                loading: true,
+            }
+        }
+        case LOAD_ARTICLE_SUCCESS: {
+            return {
+                ...state,
                 loading: false,
                 article: action.data[0],
             }
@@ -27,8 +37,13 @@ export default function (state = initialState, action) {
         case LOAD_ARTICLES: {
             return {
                 ...state,
+                loading: true,
+            }
+        }
+        case LOAD_ARTICLES_SUCCESS: {
+            return {
+                ...state,
                 loading: false,
-                error: false,
                 articleList: action.data,
             }
         }

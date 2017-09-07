@@ -19,6 +19,7 @@ class Home extends Component {
         <PostList
           articleList = {this.props.articleList}
           fetchPosts = {this.props.fetchPosts}
+          loading = {this.props.loading}
         />
       </div>
     )
@@ -27,7 +28,8 @@ class Home extends Component {
 
 export default connect(state => {
   return {
-    articleList: state.posts.articleList
+    articleList: state.posts.articleList,
+    loading: state.posts.loading
     }
   }, { fetchPosts }
 )(Home) 

@@ -21,6 +21,7 @@ class PostDetail extends Component {
     componentWillMount() {
         scrollTo(0, 0)
         this.props.fetchPost(this.props.match.params.postid)
+        this.loadingWrap = new Modal({ type: 'loading', title: '请稍后' })
     }
     componentDidUpdate() {
         document.title = this.props.article.post_title
@@ -35,7 +36,9 @@ class PostDetail extends Component {
         
     }
     render() {
-        const { article } = this.props
+        const { article, loading } = this.props
+        if (loading) this.loadingWrap.show() 
+        else this.loadingWrap.hide() 
         return (
             <div className={detail.container}>
                 <div className={detail.header}>
@@ -76,7 +79,8 @@ class PostDetail extends Component {
 
 export default connect(state => {
     return {
-        article: state.posts.article
+        article: state.posts.article,
+        loading: state.posts.loading
         }
     }, { fetchPost, deletePost })
 (PostDetail)
