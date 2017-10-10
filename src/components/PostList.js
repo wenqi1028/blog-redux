@@ -9,17 +9,16 @@ export default class PostList extends Component {
     this.loadingWrap = new Modal({ type: 'loading', title: '请稍后' })
   }
 
-  componentDidMount() {
-    setTimeout(function() {
-      loadJs("https://changyan.sohu.com/upload/plugins/plugins.list.count.js?clientId=cytb2bNdY",function(e){
-      },'cy_cmt_num')
-    }, 100);
-  }
+  // componentDidMount() {
+  //   setTimeout(function() {
+  //     loadJs("https://changyan.sohu.com/upload/plugins/plugins.list.count.js?clientId=cytb2bNdY",function(e){
+  //     },'cy_cmt_num')
+  //   }, 100);
+  // }
   render() {
     const { loading, error, articleList } = this.props
-    console.log(this.props)
-    if (loading) this.loadingWrap.show()
-    else this.loadingWrap.hide()
+    // if (loading) this.loadingWrap.show()
+    // else this.loadingWrap.hide()
     return <div>
       {
         articleList.map((item, key) => (

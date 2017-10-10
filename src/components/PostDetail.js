@@ -28,7 +28,7 @@ class PostDetail extends Component {
         hljs.initHighlighting();
         mediumZoom('main img');
         // 畅言评论
-        document.querySelector('#SOHUCS').setAttribute('sid', this.props.article._id)
+        // document.querySelector('#SOHUCS').setAttribute('sid', this.props.article._id)
             var appid = 'cytb2bNdY'; 
             var conf = 'prod_83a750ef3fef7a11a324dbddca77e7c4'; 
             var width = window.innerWidth || document.documentElement.clientWidth; 
@@ -71,7 +71,7 @@ class PostDetail extends Component {
                     </div>
                     : void 0 
                 }
-                <div id="SOHUCS">正在加载评论...</div> 
+                {/* <div id="SOHUCS">正在加载评论...</div>  */}
             </div>
         );
     }

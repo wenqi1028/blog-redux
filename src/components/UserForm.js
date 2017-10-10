@@ -57,8 +57,8 @@ class UserForm extends Component {
     return (
       <div>
         <div className={home.intro}>
-          <div className={user.avatar} onClick={this.changeAvatar}>
-            <img name="avatar" src={this.props.user.avatar} alt="头像"/>
+          <div className={user.avatar} >
+            <img name="avatar" onClick={this.changeAvatar} src={this.props.user.avatar} alt="头像" data-tip="上传头像"/>
           </div>
         </div>
         <form onSubmit={handleSubmit(this.onSubmit.bind(this))}>

@@ -3,13 +3,15 @@ import { Link } from 'react-router-dom'
 import { formatDate, loadJs } from '../utils'
 import post from '../styles/Post.css'
 
+
 export default class Post extends Component {
     render() {
         return (
         <article className={post.item}>
             <h3 className={post.title}>
-                <Link to={this.props.link} dangerouslySetInnerHTML={{__html: this.props.post_title}}></Link>
+                <Link to={this.props.link} dangerouslySetInnerHTML={{__html: this.props.post_title}} data-tip="这是个标题"></Link>
             </h3>
+           
             <div className={post.meta}>
                 {
                     this.props.tags && this.props.tags != 'undefined'
@@ -28,12 +30,6 @@ export default class Post extends Component {
                 <span className={post.metaItem}>
                     <time className={post.date}>{formatDate(this.props.post_date)}</time>
                 </span>
-                <span className={post.metaItem}>
-                    <span id={'sourceId::' + this.props._id} className="cy_cmt_count"></span>评论
-                </span>
-                {/* <span className={post.metaItem}>
-                    <a href="#">1评论</a>
-                </span> */}
                 <span className={post.metaItem}>
                     <a href="javascript:;" className={post.author}>
                         <img src={this.props.user_docs[0] ? this.props.user_docs[0].avatar : '/upload/a1.png'} alt="作者"/>

@@ -14,7 +14,7 @@ module.exports = {
 
   list: function(req, res, next) {
     const tag = new RegExp(req.query.tag, 'gi')
-    UserPosts.find({ '$or': [{ tags: tag }, { post_title: tag }] }).sort({ 'update_date':-1, '_id':-1 }).exec(function(err, data) {
+    UserPosts.find({ '$or': [{ tags: tag }, { post_title: tag }] }).sort({ '_id': -1}).exec(function(err, data) {
       if (err) return console.error(err)
       res.writeHead(200, {'Content-Type': 'application/json;charset=utf-8'})
       res.end(JSON.stringify(data))
@@ -33,7 +33,7 @@ module.exports = {
 
   create: function (req, res, next) {
     req.body.uid = ObjectID(req.body.uid)
-    new Posts(Object.assign(req.body, {post_date: new Date()})).save( function (err) {
+    new Posts(Object.assign(req.body, {post_date: new Date(), update_date: new Date()})).save( function (err) {
         if (err) {
           console.log(err)
         } else {

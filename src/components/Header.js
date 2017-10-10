@@ -9,35 +9,23 @@ import header from '../styles/Header.css'
 import search from '../styles/Search.css'
 
 class Header extends Component {
-	constructor(props) {
-		super(props)
-		this.logout = this.logout.bind(this)
-		this.onSearch = this.onSearch.bind(this)
-		this.onBlur = this.onBlur.bind(this)
-		this.onFocus = this.onFocus.bind(this)
-	}
 
-	logout() {
+	 logout() {
 		localStorage.clear()
 		this.props.history.push('/')
 	}
 
 	onSearch(q) {
+		this.props.toggleSearch(true)
 		if (q.target.value) {
 			this.props.fetchSearch(q.target.value)
-			this.props.toggleSearch(true)
 		}
 	}
 
 	onBlur(q) {
-		console.log(q)
-		if (q.relatedTarget && q.relatedTarget.nodeName == 'A') {
-			console.log('settimeout')
-			setTimeout(function() {
-				this.props.toggleSearch(false)
-			}.bind(this), 2000)
-		}
-		else this.props.toggleSearch(false)
+		setTimeout(function() {
+			this.props.toggleSearch(false)
+		}.bind(this), 500)
 	}
 
 	onFocus(q) {
@@ -45,9 +33,10 @@ class Header extends Component {
 	}
 
 	render() {
+		const { isSearchActive, searchList } = this.props
 		const panel = classNames({
-			searchPanelActive: this.props.isSearchActive,
-			searchPanel: !this.props.isSearchActive,
+			searchPanelActive: isSearchActive && searchList.length > 0,
+			searchPanel: searchList.length == 0 || (searchList.length > 0 && !isSearchActive) ,
 		})
 		return (
 			<header className={header.header}>
@@ -61,7 +50,7 @@ class Header extends Component {
 							<Link className={header.title} to={`/create`}>
 							创建
 							</Link>
-							<a className={header.title} onClick={this.logout} href="javascript:;">
+							<a className={header.title} onClick={this.logout.bind(this)} href="javascript:;">
 							登出
 							</a>
 					</span>
@@ -78,7 +67,7 @@ class Header extends Component {
 						</g>
 					</svg>
 
-					<Field name="keyword" component="input" type="text" className={search.input} onChange={this.onSearch} onBlur={this.onBlur} onFocus={this.onFocus} placeholder="输入关键字搜索" autoComplete="off" />
+					<Field name="keyword" component="input" type="text" className={search.input} onChange={this.onSearch.bind(this)} onBlur={this.onBlur.bind(this)} onFocus={this.onFocus.bind(this)} placeholder="输入关键字搜索" autoComplete="off" />
 
 					<div className={search[panel]}>
 						<ul>
