@@ -54,12 +54,6 @@ class PostDetail extends Component {
                             <span>{article.user_docs[0] ? article.user_docs[0].nickname : 'q该该'}</span>
                         </span>
                     </div>
-                    {
-                        article.post_desc 
-                        ? 
-                        <div className={detail.desc}>{article.post_desc}</div>
-                        : void 0
-                    }
                 </div>
                 <div className={detail.content} dangerouslySetInnerHTML={{__html: (article.post_content)}}>
                 </div>
