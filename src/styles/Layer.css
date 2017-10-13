@@ -1,0 +1,30 @@
+.tip {
+    position: relative;
+    background-color: #000;
+    opacity: .8;
+    color: #fff;
+    padding: 0 10px;
+    border-radius: 4px;
+    font-size: 14px;
+    line-height: 30px;
+}
+
+.tipActive {
+    composes: tip;
+    display: block;
+}
+
+.tip:after {
+    position: absolute;
+    content: "";
+    top: 26px;
+    left: 45%;
+    /* transform: translateX(-100%); */
+    width: 7px;
+    height: 7px;
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    background: #000;
+}

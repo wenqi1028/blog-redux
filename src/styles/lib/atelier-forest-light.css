@@ -15,16 +15,16 @@ pre {
 }
 
 code {
-  font-family: consolas, 'Roboto Mono', Monaco, courier, monospace ;
-  padding: 6px 4px 4px;
+  font-family: consolas, monospace ;
+  padding: 4px;
   margin: 0 5px;
-  color: #878e9a;
+  color: #333;
   background-color: #f8f8f8;
   font-size: 90%;
 }
 
 pre code {
-  line-height: 1.6;
+  line-height: 1.7;
 }
 /* Atelier-Forest Comment */
 .hljs-comment,

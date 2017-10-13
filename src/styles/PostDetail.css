@@ -32,9 +32,18 @@
     word-break: break-all;
 }
 
+blockquote {
+    border-left: 7px solid #009fb7;
+    margin: 24px 0;
+    color: rgba(0,0,0,.6);
+    padding: 16px 35px;
+    background: rgba(160, 223, 232, .1);
+}
+
 .content p {
     margin-top: 10px;
     margin-bottom: 10px;
+    letter-spacing: .3px;
 }
 
 .content a {
@@ -47,7 +56,7 @@
 
 .content a:hover {
     color: #0286c2;
-    border-bottom-color: #0286c2;
+    text-decoration: underline;
 }
 
 .content img {
