@@ -1,6 +1,5 @@
 /*view*/
 .header {
-    padding-top: 20px;
     padding-bottom: 10px;
 }
 
@@ -28,6 +27,7 @@
 }
 
 .content {
+    font-family: Georgia, serif;
     line-height: 1.6;
     word-break: break-all;
 }

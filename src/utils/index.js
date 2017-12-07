@@ -8,6 +8,7 @@ export const tags = 'Java,JavaScript,HTML,React,Vue,CSS,Redux,Webpack,历史,'
 export function formatDate(str) {
     const date = new Date(str)
     const arr_month = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'Septemper', 'October', 'November', 'December']
+    const month = date.getMonth() + 1;
     const day = date.getDate() < 10 ? '0' + date.getDate() : date.getDate()
     const time = new Date().getTime() - date.getTime(); //现在的时间-传入的时间 = 相差的时间（单位 = 毫秒）
     if (time < 0) {
@@ -21,7 +22,7 @@ export function formatDate(str) {
     } else if ((time / 86400000) < 31) {
         return parseInt(time / 86400000) + '天前';
     } else {
-        return date.getFullYear() + '-' + (date.getMonth()+1) + '-' + day
+        return date.getFullYear() + '-' + month > 9 ? month : ('0' + month) + '-' + day
     }
 }
 
