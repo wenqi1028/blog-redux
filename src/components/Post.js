@@ -9,7 +9,7 @@ export default class Post extends Component {
             <article className={post.item}>
                 <Link className={post.title} to={this.props.link} dangerouslySetInnerHTML={{ __html: this.props.post_title }} data-tip="这是个标题"></Link>
 
-                <div className={post.meta} style={{float: right}}>
+                <div className={post.meta} style={{float: 'right'}}>
                     <span className={post.metaItem}>
                         <time className={post.date}>{formatDate(this.props.post_date)}</time>
                     </span>
