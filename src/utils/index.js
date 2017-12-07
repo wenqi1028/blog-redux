@@ -22,7 +22,7 @@ export function formatDate(str) {
     } else if ((time / 86400000) < 31) {
         return parseInt(time / 86400000) + '天前';
     } else {
-        return date.getFullYear() + '-' + month > 9 ? month : ('0' + month) + '-' + day
+        return date.getFullYear() + '-' + (month > 9 ? month : ('0' + month)) + '-' + day
     }
 }
 
