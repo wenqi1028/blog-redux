@@ -12,7 +12,7 @@ class Home extends Component {
         <section className={home.intro}>
           <img className={home.myImg} src={localStorage.avatar || '/upload/a1.png'} />
           <h2 className={home.myName}>
-            <Link to="/user">{localStorage.nickname}</Link>
+            {localStorage.nickname || 'Seven'}
           </h2>
           <div className="divider"></div>
         </section>
