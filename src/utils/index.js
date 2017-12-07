@@ -21,7 +21,7 @@ export function formatDate(str) {
     } else if ((time / 86400000) < 31) {
         return parseInt(time / 86400000) + '天前';
     } else {
-        return day + ' ' + arr_month[date.getMonth()] + ' ' + date.getFullYear()
+        return date.getFullYear() + '-' + (date.getMonth()+1) + '-' + day
     }
 }
 

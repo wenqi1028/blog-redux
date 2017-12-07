@@ -1,6 +1,6 @@
 .item {
     border-bottom: 1px solid #f1f5f6;
-    padding: 3px 0;
+    padding: 6px 0;
 }
 
 .title {
@@ -14,7 +14,7 @@
 
 .meta {
     composes: clearfix from './Common.css';
-    float: right;
+    
     font-family: Georgia, serif;
     line-height: 22px;
     font-size: 13px;
