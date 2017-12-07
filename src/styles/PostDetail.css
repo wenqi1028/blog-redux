@@ -28,22 +28,22 @@
 }
 
 .content {
-    line-height: 1.8em;
+    line-height: 1.6;
     word-break: break-all;
 }
 
 blockquote {
     border-left: 7px solid #009fb7;
-    margin: 24px 0;
+    margin: 20px 0;
     color: rgba(0,0,0,.6);
-    padding: 16px 35px;
+    padding: 10px 30px;
     background: rgba(160, 223, 232, .1);
 }
 
 .content p {
     margin-top: 10px;
     margin-bottom: 10px;
-    letter-spacing: .3px;
+    letter-spacing: .2px;
 }
 
 .content a {

@@ -6,8 +6,6 @@ pre {
   margin: .8em 0;
   display: block; 
   line-height: 1.2em;
-  background-color: #ebeef5;
-  border-radius: 3px;
   white-space: pre;
   word-wrap: normal;
   overflow-x: auto;
@@ -16,10 +14,9 @@ pre {
 code {
   font-family: consolas, monospace ;
   padding: 4px;
-  margin: 0 5px;
   color: #333;
-  background-color: #ebeef5;
-  font-size: 90%;
+  background-color: rgba(0,0,0,.05);
+  font-size: 85%;
 }
 
 pre code {
@@ -79,7 +76,6 @@ pre code {
   display: block;
   overflow-x: auto;
   /* color: #525252; */
-  padding: 0.5em;
 }
 
 .hljs-emphasis {

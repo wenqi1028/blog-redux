@@ -27,13 +27,6 @@ class PostDetail extends Component {
         document.title = this.props.article.post_title
         hljs.initHighlighting();
         mediumZoom('main img');
-        // 畅言评论
-        // document.querySelector('#SOHUCS').setAttribute('sid', this.props.article._id)
-            var appid = 'cytb2bNdY'; 
-            var conf = 'prod_83a750ef3fef7a11a324dbddca77e7c4'; 
-            var width = window.innerWidth || document.documentElement.clientWidth; 
-            loadJs("http://changyan.sohu.com/upload/changyan.js",function(){window.changyan.api.config({appid:appid,conf:conf})}); 
-        
     }
     render() {
         const { article, loading } = this.props
@@ -65,7 +58,6 @@ class PostDetail extends Component {
                     </div>
                     : void 0 
                 }
-                {/* <div id="SOHUCS">正在加载评论...</div>  */}
             </div>
         );
     }
