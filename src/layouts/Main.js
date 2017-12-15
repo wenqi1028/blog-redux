@@ -45,11 +45,6 @@ class Main extends Component {
                                 <use xlinkHref="#icon-twitter"></use>
                             </svg>
                         </a>
-                        <a href="http://weibo.com/u/1576108413" className={footer.iconPart} target="_blank"> 
-                            <svg className={footer.icon} aria-hidden="true">
-                                <use xlinkHref="#icon-weibo"></use>
-                            </svg>
-                        </a>
                         <a href="/feed" className={footer.iconPart} target="_blank">
                             <svg className={footer.icon} aria-hidden="true">
                                 <use xlinkHref="#icon-feed"></use>
